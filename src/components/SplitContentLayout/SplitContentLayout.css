@@ -1,0 +1,13 @@
+.split-layout {
+  display: flex;
+  gap: 2rem;
+}
+.split-main {
+  flex: 2;
+}
+.split-aside {
+  flex: 1;
+  background: #fafafa;
+  padding: 1rem;
+  border-radius: 8px;
+}
