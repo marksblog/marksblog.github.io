@@ -2,8 +2,11 @@
   <html><![CDATA[
     <a href="https://freebitco.in/?r=13274953" target="_blank" rel="noopener" title="Earn Free Bitcoin" class="btc-ad-float">
       <svg viewBox="0 0 64 64" class="btc-ad-svg" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="32" cy="32" r="30" fill="#FFD700" stroke="#fff" stroke-width="4"/>
-        <text x="32" y="44" text-anchor="middle" font-size="36" font-family="Arial, sans-serif" fill="#fff" font-weight="bold">₿</text>
+        <circle cx="32" cy="32" r="32" fill="#fff"/>
+        <circle cx="32" cy="32" r="28" fill="#FFD700"/>
+        <path d="M36.5,34.5c2.5-0.7,4.1-2.5,4.1-5.1c0-3.4-2.4-5.3-6.7-5.6V20h-3v3.7h-2.2V20h-3v3.7h-1.8v3h1.8v7.6h-1.8v3h1.8V44h3v-3.7h2.2V44h3v-3.7
+    c0.3,0,0.6,0,1,0c4.9,0,7.7-2.1,7.7-5.8C41.5,36.5,39.6,34.9,36.5,34.5z M29.3,26.7h2.2c2.8,0,4.4,0.9,4.4,2.6c0,1.7-1.5,2.6-4.4,2.6
+    h-2.2V26.7z M31.5,39.3h-2.2v-5.3h2.2c3.2,0,4.9,1,4.9,2.7C36.4,38.3,34.7,39.3,31.5,39.3z" fill="#fff"/>
       </svg>
     </a>
   ]]></html>
