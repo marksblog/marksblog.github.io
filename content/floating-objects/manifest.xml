@@ -1,7 +1,0 @@
-<objects>
-  <object id="quotes-ocean" position="top: 60px; right: 40px;">
-    <name>Quotes Ocean</name>
-    <icon>assets/icons/quotes-ocean.svg</icon>
-    <link>quotes-ocean.html</link>
-  </object>
-</objects>
