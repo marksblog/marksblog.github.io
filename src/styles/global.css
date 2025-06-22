@@ -1,121 +1,60 @@
-:root {
-  --light-bg: #f8f8f8;
-  --dark-bg: #222;
-  --light-text: #222;
-  --dark-text: #f8f8f8;
-  --ad-bg: #ffcc00;
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: 'Comic Sans MS', cursive, sans-serif;
-  line-height: 1.6;
-}
-
-.split-container {
-  display: flex;
-  min-height: 100vh;
-}
-
-.split-vertical {
-  flex-direction: column;
-}
-
-.split-horizontal {
-  flex-direction: row;
-}
-
-.text-side, .image-side {
-  flex: 1;
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.text-side {
-  background-color: var(--light-bg);
-  color: var(--light-text);
-}
-
-.text-side.dark {
-  background-color: var(--dark-bg);
-  color: var(--dark-text);
-}
-
-.image-side {
-  background-color: var(--dark-bg);
-  color: var(--dark-text);
-}
-
-.image-side.light {
-  background-color: var(--light-bg);
-  color: var(--light-text);
-}
-
-.image-side img {
-  max-width: 100%;
-  max-height: 80vh;
-  border-radius: 8px;
-}
+/* ...existing styles... */
 
 .nav-arrows {
   position: fixed;
   top: 50%;
-  width: 100%;
+  left: 0;
+  width: 100vw;
+  height: 0;
   display: flex;
   justify-content: space-between;
-  transform: translateY(-50%);
+  align-items: center;
   pointer-events: none;
+  z-index: 10;
 }
 
 .nav-arrow {
   pointer-events: auto;
-  background: black;
-  color: white;
+  background: none;
   border: none;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 24px;
+  outline: none;
+  opacity: 0.15;
+  transition: opacity 0.4s, transform 0.4s;
   cursor: pointer;
-  margin: 0 1rem;
-  opacity: 0.7;
-  transition: opacity 0.3s;
-}
-
-.nav-arrow:hover {
-  opacity: 1;
-}
-
-.ad-placeholder {
-  position: fixed;
-  bottom: 1rem;
-  right: 1rem;
-  width: 200px;
-  height: 150px;
-  background-color: var(--ad-bg);
-  border-radius: 8px;
+  width: 80px;
+  height: 80px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  font-weight: bold;
-  color: black;
+  justify-content: center;
+  /* Hide by default */
+  visibility: hidden;
 }
 
-.article-card {
-  background: white;
-  border-radius: 8px;
-  padding: 1rem;
-  margin: 1rem 0;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+.nav-arrows:hover .nav-arrow {
+  opacity: 0.6;
+  visibility: visible;
 }
+
+.nav-arrow:hover .nav-arrow-svg {
+  transform: scale(1.4);
+}
+
+.nav-arrow-svg {
+  display: block;
+  width: 60px;
+  height: 60px;
+  fill: #111;
+  transition: transform 0.4s cubic-bezier(0.4, 2, 0.6, 1);
+}
+
+.nav-arrows:hover .nav-arrow {
+  /* Appear only when nav-arrows is hovered */
+  opacity: 0.6;
+  visibility: visible;
+}
+
+.nav-arrow:active .nav-arrow-svg {
+  transform: scale(1.2);
+}
+
+/* ...rest of your styles... */
