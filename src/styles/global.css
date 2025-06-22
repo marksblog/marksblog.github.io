@@ -345,3 +345,31 @@ body {
 .nav-arrow-svg {
   width: 80px;
   height: 80px;
+}
+
+/* --- INSERTED: Floating Home Arrow Styles --- */
+.article-home {
+  position: fixed;
+  bottom: 36px;
+  right: 36px;
+  z-index: 1001;
+  opacity: 0.6;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 2px 14px rgba(0,0,0,0.18);
+  transition: opacity 0.3s, transform 0.3s;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+.article-home:hover {
+  opacity: 1;
+  transform: scale(1.08);
+}
+.article-home .nav-arrow-svg {
+  width: 60px;
+  height: 60px;
+}
