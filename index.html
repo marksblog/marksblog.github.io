@@ -3,25 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>You are here. Welcome</title>
+  <title>Libraries of Knowledge</title>
   <link rel="stylesheet" href="src/styles/global.css">
 </head>
 <body>
-  <div id="door-container">
-    <div class="door-stoic" tabindex="0">
-      <div class="door-message">
-        <div class="door-small">You are here.</div>
-        <div class="door-large">Welcome</div>
-      </div>
+  <div class="library-container">
+    <div class="typewriter-box" tabindex="0">
+      <pre id="typewriter"></pre>
     </div>
+    <div class="door-pair">
+      <a href="virtues.html" class="library-door white-door" id="virtues-door">
+        <div class="door-label">Virtues</div>
+      </a>
+      <a href="anti-virtues.html" class="library-door black-door" id="anti-virtues-door">
+        <div class="door-label">Anti-Virtues</div>
+      </a>
+    </div>
+    <div id="floating-objects"></div>
+    <a href="classic.html" class="floating-circle-classic" title="Classic Blog"></a>
   </div>
-  <script>
-    document.querySelector('.door-stoic').onclick = () => {
-      window.location.href = 'blog.html';
-    };
-    document.querySelector('.door-stoic').onkeypress = (e) => {
-      if (e.key === "Enter" || e.key === " ") window.location.href = 'blog.html';
-    };
-  </script>
+  <script type="module" src="src/js/landing.js"></script>
 </body>
 </html>
