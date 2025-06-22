@@ -346,3 +346,174 @@ body {
   transform: scale(1.2);
   box-shadow: 0 6px 22px rgba(0,0,0,0.22);
 }
+
+/* Center blog title */
+#blog-app h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  font-family: 'Georgia', serif;
+  margin-bottom: 2rem;
+  letter-spacing: 0.1em;
+  color: #111;
+}
+
+/* Floating circles row for nav */
+.floating-circles-row {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 32px;
+  z-index: 99;
+}
+
+.floating-circle-classic,
+.floating-circle-ai {
+  width: 60px;
+  height: 60px;
+  border: 3px solid var(--border);
+  border-radius: 50%;
+  box-shadow: 0 2px 14px rgba(0,0,0,0.18);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  animation: faint-blink 2.5s infinite alternate;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.floating-circle-classic {
+  background: radial-gradient(circle, #fff 60%, #222 100%);
+}
+.floating-circle-ai {
+  background: radial-gradient(circle, #111 60%, #fff 100%);
+}
+.floating-circle-classic::after {
+  content: '';
+  display: block;
+  width: 30px;
+  height: 30px;
+  background: url('assets/icons/classic.svg') no-repeat center center/contain;
+}
+.floating-circle-ai::after {
+  content: '';
+  display: block;
+  width: 30px;
+  height: 30px;
+  background: url('assets/icons/ai-titans.svg') no-repeat center center/contain;
+}
+.floating-circle-classic:hover,
+.floating-circle-ai:hover {
+  transform: scale(1.2);
+  box-shadow: 0 6px 22px rgba(0,0,0,0.22);
+}
+
+/* Article card hover effect */
+.article-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  border: 2px solid #eee;
+  transition: box-shadow 0.2s, border 0.2s, transform 0.2s;
+}
+.article-card:hover {
+  border: 2px solid #222;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.13);
+  transform: scale(1.04);
+}
+.article-card button {
+  background: #111;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.7em 2em;
+  font-size: 1.1rem;
+  font-family: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+.article-card button:hover,
+.article-card button:focus {
+  background: #fff;
+  color: #111;
+  border: 2px solid #111;
+  transform: scale(1.08);
+}
+
+/* SVG navigation arrows and home button */
+.nav-arrows {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  width: 100vw;
+  height: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none;
+  z-index: 10;
+}
+.nav-arrow {
+  pointer-events: auto;
+  background: none;
+  border: none;
+  outline: none;
+  opacity: 0.18;
+  transition: opacity 0.4s, transform 0.4s;
+  cursor: pointer;
+  width: 140px;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: visible;
+}
+.nav-arrows:hover .nav-arrow,
+.nav-arrow:focus {
+  opacity: 0.85;
+}
+.nav-arrow-svg {
+  display: block;
+  width: 120px;
+  height: 120px;
+  fill: none;
+  stroke: #111;
+  stroke-width: 20;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform 0.5s cubic-bezier(0.4, 2, 0.6, 1), stroke 0.2s;
+}
+.nav-arrow:hover .nav-arrow-svg,
+.nav-arrow:focus .nav-arrow-svg {
+  transform: scale(1.3);
+  stroke: #888;
+}
+.nav-arrow:active .nav-arrow-svg {
+  transform: scale(1.15);
+}
+.nav-arrow.home {
+  position: fixed;
+  left: 50%;
+  bottom: 32px;
+  top: unset;
+  right: unset;
+  transform: translateX(-50%);
+  z-index: 101;
+  opacity: 0.18;
+}
+.nav-arrow.home .nav-arrow-svg {
+  stroke: #111;
+  fill: none;
+}
+.nav-arrow.home:hover .nav-arrow-svg,
+.nav-arrow.home:focus .nav-arrow-svg {
+  transform: scale(1.3);
+  stroke: #888;
+}
