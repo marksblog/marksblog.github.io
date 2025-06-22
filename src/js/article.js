@@ -55,12 +55,12 @@ fetch(`${library.path}articles/index.xml`)
                 <polyline points="35,15 65,50 35,85" stroke="#111" stroke-width="20" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </button>
-            <button class="nav-arrow home" title="Home">
-              <svg class="nav-arrow-svg" viewBox="0 0 100 100">
-                <polygon points="50,20 20,50 30,50 30,80 70,80 70,50 80,50" fill="none" stroke-width="20" stroke="#111" stroke-linejoin="round"/>
-              </svg>
-            </button>
           </div>
+          <button class="nav-arrow home" title="Home">
+            <svg class="nav-arrow-svg" viewBox="0 0 100 100">
+              <polygon points="50,20 20,50 30,50 30,80 70,80 70,50 80,50" fill="none" stroke-width="20" stroke="#111" stroke-linejoin="round"/>
+            </svg>
+          </button>
           <div class="ad-placeholder"></div>
         `;
 
