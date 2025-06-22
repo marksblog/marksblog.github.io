@@ -295,3 +295,54 @@ body {
   box-shadow: 0 4px 24px rgba(0,0,0,0.18);
   background: #fff;
   transition
+
+  .floating-circles-row {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 32px;
+  z-index: 99;
+}
+
+.floating-circle-classic,
+.floating-circle-ai {
+  width: 60px;
+  height: 60px;
+  border: 3px solid var(--border);
+  border-radius: 50%;
+  box-shadow: 0 2px 14px rgba(0,0,0,0.18);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  animation: faint-blink 2.5s infinite alternate;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.floating-circle-classic {
+  background: radial-gradient(circle, #fff 60%, #222 100%);
+}
+.floating-circle-ai {
+  background: radial-gradient(circle, #111 60%, #fff 100%);
+}
+.floating-circle-classic::after {
+  content: '';
+  display: block;
+  width: 30px;
+  height: 30px;
+  background: url('assets/icons/classic.svg') no-repeat center center/contain;
+}
+.floating-circle-ai::after {
+  content: '';
+  display: block;
+  width: 30px;
+  height: 30px;
+  background: url('assets/icons/ai-titans.svg') no-repeat center center/contain;
+}
+.floating-circle-classic:hover,
+.floating-circle-ai:hover {
+  transform: scale(1.2);
+  box-shadow: 0 6px 22px rgba(0,0,0,0.22);
+}
