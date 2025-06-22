@@ -8,5 +8,10 @@
     "slug": "dancing-shoes",
     "title": "The Dancing Shoes",
     "preview": "Shoes that dance by themselves when you're not looking!"
+  },
+  {
+    "slug": "daily-stoic-quote",
+    "title": "Daily Stoic: The Obstacle is the Way",
+    "preview": "A timeless lesson from Marcus Aurelius about turning obstacles into opportunities."
   }
 ]
