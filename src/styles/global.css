@@ -8,6 +8,9 @@
   --border: #888;
 }
 
+/* =========================
+   Base Styles
+   ========================= */
 body {
   font-family: 'Segoe UI', Arial, sans-serif;
   background: #f0f0f0;
@@ -15,7 +18,9 @@ body {
   overflow-x: hidden;
 }
 
-/* Door container */
+/* =========================
+   Door Components
+   ========================= */
 .door-container {
   display: flex;
   justify-content: center;
@@ -77,7 +82,9 @@ body {
   opacity: 1;
 }
 
-/* Floating Circles Row */
+/* =========================
+   Floating Circles
+   ========================= */
 .floating-circles-row {
   position: fixed;
   bottom: 30px;
@@ -88,7 +95,6 @@ body {
   z-index: 99;
 }
 
-/* Floating Circles */
 .floating-circle-classic,
 .floating-circle-ai {
   width: 60px;
@@ -139,7 +145,9 @@ body {
   100% { opacity: 1; }
 }
 
-/* Floating objects */
+/* =========================
+   Floating Objects
+   ========================= */
 #floating-objects {
   position: absolute;
   top: 0;
@@ -200,7 +208,9 @@ body {
   50% { transform: translateY(-20px) rotate(5deg); }
 }
 
-/* Blog container */
+/* =========================
+   Blog Container and Cards
+   ========================= */
 #blog-app {
   max-width: 800px;
   margin: 3rem auto;
@@ -253,7 +263,9 @@ body {
   transform: scale(1.08);
 }
 
-/* Article split view */
+/* =========================
+   Article Split View
+   ========================= */
 .split-container {
   display: flex;
   min-height: 100vh;
@@ -266,148 +278,4 @@ body {
 .split-vertical {
   flex-direction: column;
 }
-.text-side, .image-side {
-  flex: 1;
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  transition: background 0.5s, color 0.5s;
-}
-.text-side.light {
-  background: var(--light-bg);
-  color: var(--light-text);
-}
-.text-side.dark {
-  background: var(--dark-bg);
-  color: var(--dark-text);
-}
-.image-side.light {
-  background: var(--light-bg);
-}
-.image-side.dark {
-  background: var(--dark-bg);
-}
-.image-side img {
-  max-width: 90%;
-  max-height: 70vh;
-  width: auto;
-  height: auto;
-  object-fit: contain;
-  border-radius: 18px;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
-  background: #fff;
-  transition: box-shadow 0.3s;
-}
-
-/* Center blog title */
-#blog-app h1 {
-  text-align: center;
-  font-size: 2.5rem;
-  font-family: 'Georgia', serif;
-  margin-bottom: 2rem;
-  letter-spacing: 0.1em;
-  color: #111;
-}
-
-/* Navigation Arrows (left/right) and Home Button */
-.nav-arrows {
-  position: fixed;
-  top: 85vh;
-  left: 0;
-  width: 100vw;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  pointer-events: none;
-  z-index: 1000;
-  transform: translateY(-50%);
-  padding: 0;
-}
-.nav-arrow,
-.article-home {
-  pointer-events: auto;
-  background: #fff;
-  border: 3px solid #888;
-  border-radius: 50%;
-  box-shadow: 0 2px 14px rgba(0,0,0,0.18);
-  opacity: 0.6;
-  transition: opacity 0.3s, transform 0.3s, box-shadow 0.3s;
-  cursor: pointer;
-  width: 80px;
-  height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-  visibility: visible;
-}
-.nav-arrow:hover,
-.article-home:hover {
-  opacity: 1;
-  transform: scale(1.08);
-  box-shadow: 0 6px 22px rgba(0,0,0,0.22);
-}
-.nav-arrow.prev {
-  margin-left: 32px;
-}
-.nav-arrow.next {
-  margin-right: 32px;
-}
-.nav-arrow-svg,
-.article-home .nav-arrow-svg {
-  width: 60px;
-  height: 60px;
-  display: block;
-}
-
-/* Nav Arrow Contrast Hover (dynamic via JS .on-dark/.on-light) */
-.nav-arrow .nav-arrow-svg polyline,
-.nav-arrow .nav-arrow-svg polygon {
-  stroke: #111;
-  transition: stroke 0.2s;
-}
-.nav-arrow.on-dark:hover .nav-arrow-svg polyline,
-.nav-arrow.on-dark:hover .nav-arrow-svg polygon {
-  stroke: #fff;
-}
-.nav-arrow.on-light:hover .nav-arrow-svg polyline,
-.nav-arrow.on-light:hover .nav-arrow-svg polygon {
-  stroke: #111;
-}
-
-/* Home Button (top left) */
-.article-home {
-  position: fixed;
-  top: 36px;
-  left: 36px;
-  z-index: 1001;
-}
-
-/* BTC Ad Button (top right, uses uploaded JPG) */
-.btc-ad-float {
-  position: fixed;
-  top: 36px;
-  right: 36px;
-  z-index: 1002;
-  width: 80px;
-  height: 80px;
-  background: #fff url('/assets/icons/btc.jpg') center center / 60% no-repeat;
-  border: 3px solid #888;
-  border-radius: 50%;
-  box-shadow: 0 2px 14px rgba(0,0,0,0.18);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0.6;
-  transition: opacity 0.3s, transform 0.3s, box-shadow 0.3s;
-  text-decoration: none;
-}
-.btc-ad-float:hover {
-  opacity: 1;
-  transform: scale(1.08);
-  box-shadow: 0 6px 22px rgba(0,0,0,0.22);
-}
+.text-side, .
