@@ -6,7 +6,37 @@
   </article>
   <article>
     <slug>wisdom</slug>
-    <title>The Silent Wisdom</title>
-    <preview>Knowledge that whispers in the stillness</preview>
+    <title>The Light of Wisdom</title>
+    <preview>Seeing clearly beyond the surface</preview>
+  </article>
+  <article>
+    <slug>justice</slug>
+    <title>The Balance of Justice</title>
+    <preview>Fairness in thought and action</preview>
+  </article>
+  <article>
+    <slug>temperance</slug>
+    <title>The Power of Temperance</title>
+    <preview>Strength through self-control</preview>
+  </article>
+  <article>
+    <slug>patience</slug>
+    <title>The Quiet of Patience</title>
+    <preview>Steadfast through trials</preview>
+  </article>
+  <article>
+    <slug>gratitude</slug>
+    <title>The Gift of Gratitude</title>
+    <preview>Appreciating the present moment</preview>
+  </article>
+  <article>
+    <slug>honesty</slug>
+    <title>The Strength of Honesty</title>
+    <preview>Truth in word and deed</preview>
+  </article>
+  <article>
+    <slug>compassion</slug>
+    <title>The Heart of Compassion</title>
+    <preview>Caring for others’ pain</preview>
   </article>
 </articles>
