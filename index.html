@@ -3,19 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welcome to Mark's Blog</title>
+  <title>You are here. Welcome</title>
   <link rel="stylesheet" href="src/styles/global.css">
 </head>
 <body>
   <div id="door-container">
-    <div class="door">
-      <h1>Welcome</h1>
-      <p>Click the door to enter Mark's Blog</p>
+    <div class="door-stoic" tabindex="0">
+      <div class="door-message">
+        <div class="door-small">You are here.</div>
+        <div class="door-large">Welcome</div>
+      </div>
     </div>
   </div>
   <script>
-    document.querySelector('.door').onclick = () => {
+    document.querySelector('.door-stoic').onclick = () => {
       window.location.href = 'blog.html';
+    };
+    document.querySelector('.door-stoic').onkeypress = (e) => {
+      if (e.key === "Enter" || e.key === " ") window.location.href = 'blog.html';
     };
   </script>
 </body>
