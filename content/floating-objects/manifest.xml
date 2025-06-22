@@ -1,0 +1,12 @@
+<objects>
+  <object id="quotes-ocean" position="top: 20px; right: 40px;">
+    <name>Ocean of Quotes</name>
+    <icon>assets/icons/quotes.svg</icon>
+    <link>quotes-ocean.html</link>
+  </object>
+  <object id="ai-titans" position="bottom: 120px; left: 60px;">
+    <name>AI Titans</name>
+    <icon>assets/icons/ai-titans.svg</icon>
+    <link>ai-titans.html</link>
+  </object>
+</objects>
