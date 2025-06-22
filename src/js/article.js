@@ -56,7 +56,7 @@ fetch(`${library.path}articles/index.xml`)
               </svg>
             </button>
           </div>
-          <button class="nav-arrow home" title="Home">
+          <button class="nav-arrow home article-home" title="Home">
             <svg class="nav-arrow-svg" viewBox="0 0 100 100">
               <polygon points="50,20 20,50 30,50 30,80 70,80 70,50 80,50" fill="none" stroke-width="20" stroke="#111" stroke-linejoin="round"/>
             </svg>
