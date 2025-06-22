@@ -1,7 +1,7 @@
 const params = new URLSearchParams(window.location.search);
 const articleSlug = params.get('article');
 
-// List of articles for navigation (add more slugs as you add articles)
+// List your articles here in order:
 const articles = ['giggle-monster', 'dancing-shoes'];
 const currentIndex = articles.indexOf(articleSlug);
 const prevSlug = articles[(currentIndex - 1 + articles.length) % articles.length];
@@ -11,7 +11,7 @@ fetch(`content/articles/${articleSlug}/${articleSlug}.json`)
   .then(response => response.json())
   .then(article => {
     const app = document.getElementById('article-app');
-    // Randomize which side is text/image and which is light/dark
+    // Randomize split and color
     const isPortrait = window.innerHeight > window.innerWidth;
     const layoutClass = isPortrait ? 'split-vertical' : 'split-horizontal';
     const textFirst = Math.random() > 0.5;
