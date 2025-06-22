@@ -40,28 +40,32 @@ fetch(`${library.path}articles/index.xml`)
           <img src="content/${libraryName}/articles/${article.image}" alt="${article.title}">
         </div>`;
 
+        // Insert main content
         app.innerHTML = `
           <div class="split-container ${layoutClass}">
             ${textFirst ? textDiv + imageDiv : imageDiv + textDiv}
           </div>
         `;
 
-        // Insert navigation arrows OUTSIDE the main content
+        // Insert navigation and ad (as HTML, so SVGs render correctly)
+        // Remove any existing nav arrows and home/ad to avoid duplicates
+        document.querySelectorAll('.nav-arrows, .article-home, .ad-placeholder').forEach(el => el.remove());
+
         document.body.insertAdjacentHTML('beforeend', `
           <div class="nav-arrows">
             <button class="nav-arrow prev" title="Previous story">
-              <svg class="nav-arrow-svg" viewBox="0 0 100 100">
+              <svg class="nav-arrow-svg" viewBox="0 0 100 100" width="80" height="80">
                 <polyline points="65,15 35,50 65,85" stroke="#111" stroke-width="20" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </button>
             <button class="nav-arrow next" title="Next story">
-              <svg class="nav-arrow-svg" viewBox="0 0 100 100">
+              <svg class="nav-arrow-svg" viewBox="0 0 100 100" width="80" height="80">
                 <polyline points="35,15 65,50 35,85" stroke="#111" stroke-width="20" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </button>
           </div>
           <button class="nav-arrow home article-home" title="Home">
-            <svg class="nav-arrow-svg" viewBox="0 0 100 100">
+            <svg class="nav-arrow-svg" viewBox="0 0 100 100" width="80" height="80">
               <polygon points="50,20 20,50 30,50 30,80 70,80 70,50 80,50" fill="none" stroke-width="20" stroke="#111" stroke-linejoin="round"/>
             </svg>
           </button>
@@ -75,7 +79,7 @@ fetch(`${library.path}articles/index.xml`)
         document.querySelector('.next').addEventListener('click', () => {
           window.location.href = `article.html?library=${libraryName}&article=${nextSlug}`;
         });
-        document.querySelector('.home').addEventListener('click', () => {
+        document.querySelector('.home.article-home').addEventListener('click', () => {
           window.location.href = `${library.name}.html`;
         });
 
