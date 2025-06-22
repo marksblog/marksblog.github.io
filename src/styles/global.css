@@ -347,6 +347,21 @@ body {
   height: 80px;
 }
 
+/* Nav Arrow Contrast Hover (dynamic via JS .on-dark/.on-light) */
+.nav-arrow .nav-arrow-svg polyline,
+.nav-arrow .nav-arrow-svg polygon {
+  stroke: #111;
+  transition: stroke 0.2s;
+}
+.nav-arrow.on-dark:hover .nav-arrow-svg polyline,
+.nav-arrow.on-dark:hover .nav-arrow-svg polygon {
+  stroke: #fff;
+}
+.nav-arrow.on-light:hover .nav-arrow-svg polyline,
+.nav-arrow.on-light:hover .nav-arrow-svg polygon {
+  stroke: #111;
+}
+
 /* --- INSERTED: Floating Home Arrow Styles --- */
 .article-home {
   position: fixed;
@@ -365,7 +380,6 @@ body {
   justify-content: center;
   padding: 0;
 }
-
 .article-home:hover {
   opacity: 1;
   transform: scale(1.08);
