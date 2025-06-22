@@ -316,7 +316,7 @@ body {
 /* Navigation Arrows (left/right) and Home Button */
 .nav-arrows {
   position: fixed;
-  top: 85vh; /* Lowered to 85% of viewport height */
+  top: 85vh;
   left: 0;
   width: 100vw;
   display: flex;
@@ -387,10 +387,10 @@ body {
   z-index: 1001;
 }
 
-/* BTC Ad Button (aligned with nav arrows, bottom right) */
+/* BTC Ad Button (top right, matches home/nav size and style) */
 .btc-ad-float {
   position: fixed;
-  top: 85vh;
+  top: 36px;
   right: 36px;
   z-index: 1002;
   width: 80px;
@@ -404,15 +404,5 @@ body {
   opacity: 0.6;
   transition: opacity 0.3s, transform 0.3s, box-shadow 0.3s;
   text-decoration: none;
-  transform: translateY(-50%);
 }
 .btc-ad-float:hover {
-  opacity: 1;
-  transform: translateY(-50%) scale(1.08);
-  box-shadow: 0 6px 22px rgba(0,0,0,0.22);
-}
-.btc-ad-svg {
-  width: 60px;
-  height: 60px;
-  display: block;
-}
