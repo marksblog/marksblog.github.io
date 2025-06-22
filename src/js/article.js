@@ -32,13 +32,13 @@ fetch(`content/articles/${articleSlug}/${articleSlug}.json`)
       </div>
       <div class="nav-arrows">
         <button class="nav-arrow prev" title="Previous story">
-          <svg class="nav-arrow-svg" viewBox="0 0 70 70">
-            <polyline points="45,10 25,35 45,60" stroke="#111" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <svg class="nav-arrow-svg" viewBox="0 0 100 100">
+            <polyline points="65,15 35,50 65,85" />
           </svg>
         </button>
         <button class="nav-arrow next" title="Next story">
-          <svg class="nav-arrow-svg" viewBox="0 0 70 70">
-            <polyline points="25,10 45,35 25,60" stroke="#111" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <svg class="nav-arrow-svg" viewBox="0 0 100 100">
+            <polyline points="35,15 65,50 35,85" />
           </svg>
         </button>
       </div>
