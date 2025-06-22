@@ -350,8 +350,8 @@ body {
 /* --- INSERTED: Floating Home Arrow Styles --- */
 .article-home {
   position: fixed;
-  bottom: 36px;
-  right: 36px;
+  top: 36px;
+  left: 36px;
   z-index: 1001;
   opacity: 0.6;
   background: #fff;
@@ -365,6 +365,7 @@ body {
   justify-content: center;
   padding: 0;
 }
+
 .article-home:hover {
   opacity: 1;
   transform: scale(1.08);
