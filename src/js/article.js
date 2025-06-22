@@ -44,6 +44,10 @@ fetch(`${library.path}articles/index.xml`)
           <div class="split-container ${layoutClass}">
             ${textFirst ? textDiv + imageDiv : imageDiv + textDiv}
           </div>
+        `;
+
+        // Insert navigation arrows OUTSIDE the main content
+        document.body.insertAdjacentHTML('beforeend', `
           <div class="nav-arrows">
             <button class="nav-arrow prev" title="Previous story">
               <svg class="nav-arrow-svg" viewBox="0 0 100 100">
@@ -62,7 +66,7 @@ fetch(`${library.path}articles/index.xml`)
             </svg>
           </button>
           <div class="ad-placeholder"></div>
-        `;
+        `);
 
         // Navigation handlers
         document.querySelector('.prev').addEventListener('click', () => {
