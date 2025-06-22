@@ -42,3 +42,12 @@
   text-transform: uppercase;
   margin-bottom: 0.5rem;
 }
+.nav-arrow.home .nav-arrow-svg {
+  stroke: #111;
+  fill: none;
+}
+.nav-arrow.home:hover .nav-arrow-svg,
+.nav-arrow.home:focus .nav-arrow-svg {
+  transform: scale(1.3);
+  stroke: #888;
+}
