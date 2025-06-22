@@ -2,7 +2,7 @@ const params = new URLSearchParams(window.location.search);
 const articleSlug = params.get('article');
 
 // List your articles here in order:
-const articles = ['giggle-monster', 'dancing-shoes'];
+const articles = ['giggle-monster', 'dancing-shoes', 'daily-stoic-quote'];
 const currentIndex = articles.indexOf(articleSlug);
 const prevSlug = articles[(currentIndex - 1 + articles.length) % articles.length];
 const nextSlug = articles[(currentIndex + 1) % articles.length];
