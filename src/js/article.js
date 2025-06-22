@@ -72,6 +72,28 @@ fetch(`${library.path}articles/index.xml`)
           <div class="ad-placeholder"></div>
         `);
 
+        // DYNAMIC CONTRAST LOGIC FOR ARROWS
+        function getArrowBgClass(arrowButton) {
+          const rect = arrowButton.getBoundingClientRect();
+          const x = rect.left + rect.width / 2;
+          const y = rect.top + rect.height / 2;
+          const elem = document.elementFromPoint(x, y);
+          let parent = elem;
+          while (parent && !(parent.classList && (parent.classList.contains('text-side') || parent.classList.contains('image-side')))) {
+            parent = parent.parentNode;
+          }
+          if (parent && parent.classList.contains('dark')) return 'on-dark';
+          return 'on-light';
+        }
+        function updateArrowContrast() {
+          document.querySelectorAll('.nav-arrow').forEach(btn => {
+            btn.classList.remove('on-dark', 'on-light');
+            btn.classList.add(getArrowBgClass(btn));
+          });
+        }
+        updateArrowContrast();
+        window.addEventListener('resize', updateArrowContrast);
+
         // Navigation handlers
         document.querySelector('.prev').addEventListener('click', () => {
           window.location.href = `article.html?library=${libraryName}&article=${prevSlug}`;
