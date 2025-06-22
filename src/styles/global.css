@@ -316,7 +316,7 @@ body {
 /* Navigation Arrows (left/right) */
 .nav-arrows {
   position: fixed;
-  top: 50%;
+  top: 75vh;
   left: 0;
   width: 100vw;
   display: flex;
@@ -327,6 +327,7 @@ body {
   transform: translateY(-50%);
   padding: 0;
 }
+
 .nav-arrow {
   pointer-events: auto;
   background: #fff;
