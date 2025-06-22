@@ -329,18 +329,24 @@ body {
 }
 .nav-arrow {
   pointer-events: auto;
-  background: none;
-  border: none;
-  outline: none;
-  opacity: 0.18;
-  transition: opacity 0.4s, transform 0.4s;
+  background: #fff;
+  border: 3px solid #888;
+  border-radius: 50%;
+  box-shadow: 0 2px 14px rgba(0,0,0,0.14);
+  opacity: 0.4;
+  transition: opacity 0.4s, transform 0.4s, box-shadow 0.3s;
   cursor: pointer;
-  width: 100px;
-  height: 100px;
+  width: 110px;
+  height: 110px;
   display: flex;
   align-items: center;
   justify-content: center;
   visibility: visible;
+}
+.nav-arrow:hover {
+  opacity: 1;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.22);
+  transform: scale(1.12);
 }
 .nav-arrow.prev {
   margin-left: 32px;
@@ -349,8 +355,8 @@ body {
   margin-right: 32px;
 }
 .nav-arrow-svg {
-  width: 80px;
-  height: 80px;
+  width: 90px;
+  height: 90px;
 }
 
 /* Nav Arrow Contrast Hover (dynamic via JS .on-dark/.on-light) */
