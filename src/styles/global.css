@@ -387,7 +387,7 @@ body {
   z-index: 1001;
 }
 
-/* BTC Ad Button (top right, matches home/nav size and style) */
+/* BTC Ad Button (top right, uses uploaded JPG) */
 .btc-ad-float {
   position: fixed;
   top: 36px;
@@ -395,7 +395,8 @@ body {
   z-index: 1002;
   width: 80px;
   height: 80px;
-  background: #fff;
+  background: #fff url('/assets/icons/btc.jpg') center center / 60% no-repeat;
+  border: 3px solid #888;
   border-radius: 50%;
   box-shadow: 0 2px 14px rgba(0,0,0,0.18);
   display: flex;
@@ -406,3 +407,7 @@ body {
   text-decoration: none;
 }
 .btc-ad-float:hover {
+  opacity: 1;
+  transform: scale(1.08);
+  box-shadow: 0 6px 22px rgba(0,0,0,0.22);
+}
