@@ -1,7 +1,7 @@
 const params = new URLSearchParams(window.location.search);
 const articleSlug = params.get('article');
 
-// List of articles for navigation
+// List of articles for navigation (update as you add more)
 const articles = ['giggle-monster', 'dancing-shoes'];
 const currentIndex = articles.indexOf(articleSlug);
 const prevSlug = articles[(currentIndex - 1 + articles.length) % articles.length];
