@@ -379,7 +379,7 @@ body {
   stroke: #111;
 }
 
-/* --- INSERTED: Floating Home Arrow Styles --- */
+/* Home Button (top left) */
 .article-home {
   position: fixed;
   top: 36px;
@@ -387,7 +387,7 @@ body {
   z-index: 1001;
 }
 
-/* --- Floating BTC Ad Styles --- */
+/* BTC Ad Button (top right) */
 .btc-ad-float {
   position: fixed;
   top: 36px;
@@ -401,7 +401,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0.85;
+  opacity: 0.6;
   transition: opacity 0.3s, transform 0.3s, box-shadow 0.3s;
   text-decoration: none;
 }
