@@ -9,4 +9,34 @@
     <title>The Corrosion of Doubt</title>
     <preview>Uncertainty that consumes from within</preview>
   </article>
+  <article>
+    <slug>envy</slug>
+    <title>The Poison of Envy</title>
+    <preview>Resentment of others’ fortune</preview>
+  </article>
+  <article>
+    <slug>anger</slug>
+    <title>The Fire of Anger</title>
+    <preview>Consuming and uncontrolled</preview>
+  </article>
+  <article>
+    <slug>greed</slug>
+    <title>The Hunger of Greed</title>
+    <preview>Never satisfied, always wanting more</preview>
+  </article>
+  <article>
+    <slug>deceit</slug>
+    <title>The Mask of Deceit</title>
+    <preview>Truth hidden in shadows</preview>
+  </article>
+  <article>
+    <slug>arrogance</slug>
+    <title>The Blindness of Arrogance</title>
+    <preview>Elevating self above others</preview>
+  </article>
+  <article>
+    <slug>apathy</slug>
+    <title>The Chill of Apathy</title>
+    <preview>Indifference to the world’s needs</preview>
+  </article>
 </articles>
