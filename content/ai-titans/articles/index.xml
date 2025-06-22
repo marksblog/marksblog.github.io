@@ -1,0 +1,17 @@
+<articles>
+  <article>
+    <slug>gpt4</slug>
+    <title>GPT-4: The Language Architect</title>
+    <preview>The most advanced language model in the world.</preview>
+  </article>
+  <article>
+    <slug>gemini</slug>
+    <title>Gemini: The Multimodal Visionary</title>
+    <preview>Google's AI that sees, hears, and understands.</preview>
+  </article>
+  <article>
+    <slug>claude</slug>
+    <title>Claude: The Friendly Genius</title>
+    <preview>Anthropic's safe and helpful AI assistant.</preview>
+  </article>
+</articles>
