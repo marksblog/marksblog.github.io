@@ -313,10 +313,10 @@ body {
   color: #111;
 }
 
-/* Navigation Arrows (left/right) */
+/* Navigation Arrows (left/right) and Home Button */
 .nav-arrows {
   position: fixed;
-  top: 75vh;
+  top: 85vh; /* Lowered to 85% of viewport height */
   left: 0;
   width: 100vw;
   display: flex;
@@ -327,27 +327,29 @@ body {
   transform: translateY(-50%);
   padding: 0;
 }
-
-.nav-arrow {
+.nav-arrow,
+.article-home {
   pointer-events: auto;
   background: #fff;
   border: 3px solid #888;
   border-radius: 50%;
-  box-shadow: 0 2px 14px rgba(0,0,0,0.14);
-  opacity: 0.4;
-  transition: opacity 0.4s, transform 0.4s, box-shadow 0.3s;
+  box-shadow: 0 2px 14px rgba(0,0,0,0.18);
+  opacity: 0.6;
+  transition: opacity 0.3s, transform 0.3s, box-shadow 0.3s;
   cursor: pointer;
-  width: 110px;
-  height: 110px;
+  width: 80px;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0;
   visibility: visible;
 }
-.nav-arrow:hover {
+.nav-arrow:hover,
+.article-home:hover {
   opacity: 1;
-  box-shadow: 0 6px 24px rgba(0,0,0,0.22);
-  transform: scale(1.12);
+  transform: scale(1.08);
+  box-shadow: 0 6px 22px rgba(0,0,0,0.22);
 }
 .nav-arrow.prev {
   margin-left: 32px;
@@ -355,9 +357,11 @@ body {
 .nav-arrow.next {
   margin-right: 32px;
 }
-.nav-arrow-svg {
-  width: 90px;
-  height: 90px;
+.nav-arrow-svg,
+.article-home .nav-arrow-svg {
+  width: 60px;
+  height: 60px;
+  display: block;
 }
 
 /* Nav Arrow Contrast Hover (dynamic via JS .on-dark/.on-light) */
@@ -381,23 +385,33 @@ body {
   top: 36px;
   left: 36px;
   z-index: 1001;
-  opacity: 0.6;
+}
+
+/* --- Floating BTC Ad Styles --- */
+.btc-ad-float {
+  position: fixed;
+  top: 36px;
+  right: 36px;
+  z-index: 1002;
+  width: 80px;
+  height: 80px;
   background: #fff;
   border-radius: 50%;
   box-shadow: 0 2px 14px rgba(0,0,0,0.18);
-  transition: opacity 0.3s, transform 0.3s;
-  width: 80px;
-  height: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0;
+  opacity: 0.85;
+  transition: opacity 0.3s, transform 0.3s, box-shadow 0.3s;
+  text-decoration: none;
 }
-.article-home:hover {
+.btc-ad-float:hover {
   opacity: 1;
   transform: scale(1.08);
+  box-shadow: 0 6px 22px rgba(0,0,0,0.22);
 }
-.article-home .nav-arrow-svg {
+.btc-ad-svg {
   width: 60px;
   height: 60px;
+  display: block;
 }
