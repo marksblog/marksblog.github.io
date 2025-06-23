@@ -6,6 +6,36 @@ const library = {
   path: `content/${libraryName}/`
 };
 
+// ==========================
+// Ad Cycling Setup
+// ==========================
+const adFiles = [
+  'content/ads/01.xml',
+  'content/ads/02.xml',
+  'content/ads/03.xml'
+  // Add more ad XMLs as needed
+];
+
+// Get current ad index from sessionStorage or default to 0
+let currentAdIndex = parseInt(sessionStorage.getItem('adIndex'), 10);
+if (isNaN(currentAdIndex)) currentAdIndex = 0;
+
+// Function to load and display the current ad
+function loadAd(index) {
+  const adIndex = index % adFiles.length;
+  fetch(adFiles[adIndex])
+    .then(res => res.text())
+    .then(adXml => {
+      const parser = new DOMParser();
+      const adDoc = parser.parseFromString(adXml, "text/xml");
+      const adHtml = adDoc.querySelector('html').textContent;
+      const adPlaceholder = document.querySelector('.ad-placeholder');
+      if (adPlaceholder) adPlaceholder.innerHTML = adHtml;
+      // Save the next index for the next navigation
+      sessionStorage.setItem('adIndex', (adIndex + 1) % adFiles.length);
+    });
+}
+
 fetch(`${library.path}articles/index.xml`)
   .then(response => response.text())
   .then(indexXml => {
@@ -47,8 +77,7 @@ fetch(`${library.path}articles/index.xml`)
           </div>
         `;
 
-        // Insert navigation and ad (as HTML, so SVGs render correctly)
-        // Remove any existing nav arrows and home/ad to avoid duplicates
+        // Remove any existing nav arrows, home, or ad to avoid duplicates
         document.querySelectorAll('.nav-arrows, .article-home, .ad-placeholder').forEach(el => el.remove());
 
         document.body.insertAdjacentHTML('beforeend', `
@@ -94,23 +123,30 @@ fetch(`${library.path}articles/index.xml`)
         updateArrowContrast();
         window.addEventListener('resize', updateArrowContrast);
 
-        // Navigation handlers
-        document.querySelector('.prev').addEventListener('click', () => {
-          window.location.href = `article.html?library=${libraryName}&article=${prevSlug}`;
+        // Navigation handlers with ad cycling
+        document.querySelector('.prev').addEventListener('click', (e) => {
+          e.preventDefault();
+          loadAd(currentAdIndex);
+          setTimeout(() => {
+            window.location.href = `article.html?library=${libraryName}&article=${prevSlug}`;
+          }, 50);
         });
-        document.querySelector('.next').addEventListener('click', () => {
-          window.location.href = `article.html?library=${libraryName}&article=${nextSlug}`;
+        document.querySelector('.next').addEventListener('click', (e) => {
+          e.preventDefault();
+          loadAd(currentAdIndex);
+          setTimeout(() => {
+            window.location.href = `article.html?library=${libraryName}&article=${nextSlug}`;
+          }, 50);
         });
-        document.querySelector('.home.article-home').addEventListener('click', () => {
-          window.location.href = `${library.name}.html`;
+        document.querySelector('.home.article-home').addEventListener('click', (e) => {
+          e.preventDefault();
+          loadAd(currentAdIndex);
+          setTimeout(() => {
+            window.location.href = `${library.name}.html`;
+          }, 50);
         });
 
-        // Load global ad (cycles through all ads)
-        fetch('content/ads/01.xml')
-          .then(res => res.text())
-          .then(adXml => {
-            const adDoc = parser.parseFromString(adXml, "text/xml");
-            document.querySelector('.ad-placeholder').innerHTML = adDoc.querySelector('html').textContent;
-          });
+        // Load current ad on page load
+        loadAd(currentAdIndex);
       });
   });
