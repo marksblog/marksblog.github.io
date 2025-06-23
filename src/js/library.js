@@ -2,9 +2,10 @@
 
 const library = window.libraryContext;
 
-// List your libraries in the order you want navigation to cycle
+// List all your libraries in the navigation order
 const libraries = [
   {name: 'virtues', label: 'Virtues', file: 'virtues.html'},
+  {name: 'classic', label: 'Classic', file: 'classic.html'},
   {name: 'noble', label: 'Noble Realm', file: 'noble.html'},
   {name: 'wicked', label: 'Wicked Domain', file: 'wicked.html'},
   {name: 'anti-virtues', label: 'Anti-Virtues', file: 'anti-virtues.html'}
