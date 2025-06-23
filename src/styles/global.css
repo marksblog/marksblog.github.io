@@ -1,35 +1,10 @@
-body {
-  background: #faf9f6;
-  color: #232323;
-  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: inherit;
-  font-weight: 700;
-  margin-top: 0;
-}
-
-a {
-  color: #232323;
-  text-decoration: none;
-  transition: color 0.18s;
-}
-a:hover, a:focus {
-  color: #444;
-}
-
-button {
-  font-family: inherit;
-  font-size: inherit;
-  background: none;
-  border: none;
-  cursor: pointer;
-  outline: none;
-}
+/* ========== CSS RESET ========== */
+*, *::before, *::after { box-sizing: border-box; }
+body, h1, h2, h3, h4, h5, h6, p, ul, ol { margin: 0; padding: 0; }
+ul, ol { list-style: none; }
+img, svg { display: block; max-width: 100%; }
+button, input, select, textarea { font: inherit; }
+body { line-height: 1.5; -webkit-font-smoothing: antialiased; background: #faf9f6; color: #232323; font-family: 'Inter', 'Segoe UI', Arial, sans-serif; min-height: 100vh; }
 
 /* ========== DOOR STYLES ========== */
 .door-container {
@@ -108,7 +83,6 @@ button {
   justify-content: center;
   margin-top: 4vw;
 }
-
 .floating-circle-ai,
 .floating-circle-classic,
 .floating-circle-noble,
@@ -131,7 +105,6 @@ button {
   position: relative;
   z-index: 2;
 }
-
 .floating-circle-ai {
   background: linear-gradient(135deg, #c3e3fc 40%, #b4d8f8 100%);
   border-color: #8cb6d6;
@@ -158,7 +131,6 @@ button {
   max-width: 540px;
   padding: 0;
 }
-
 .article-card {
   background: #fcfcfc;
   border: 1px solid #e0e0e0;
@@ -168,26 +140,22 @@ button {
   cursor: pointer;
   transition: background 0.15s, box-shadow 0.15s, transform 0.15s;
 }
-
 .article-card:hover {
   background: #f3f3f3;
   box-shadow: 0 3px 12px rgba(0,0,0,0.09);
   transform: translateY(-2px) scale(1.01);
 }
-
 .article-card h2 {
   margin: 0 0 0.4rem 0;
   font-size: 1.25rem;
   color: #222;
   font-weight: 600;
 }
-
 .article-card p {
   margin: 0 0 1rem 0;
   color: #555;
   font-size: 1.05rem;
 }
-
 .article-card button {
   background: #232323;
   color: #fff;
@@ -199,12 +167,89 @@ button {
   letter-spacing: 0.03em;
   transition: background 0.16s;
 }
-
 .article-card button:hover {
   background: #444;
 }
 
-/* ========== NAV ARROWS WITH CIRCLE ========== */
+/* ========== ARTICLE VIEW (INSIDE ARTICLE) ========== */
+.article-content {
+  max-width: 650px;
+  margin: 2.5rem auto 2rem auto;
+  background: #fff;
+  border-radius: 1.1rem;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+  padding: 2.2rem 1.7rem;
+}
+.article-content h1, .article-content h2, .article-content h3 {
+  margin-top: 1.6rem;
+  margin-bottom: 1rem;
+}
+.article-content p {
+  margin-bottom: 1.1rem;
+  color: #232323;
+  font-size: 1.13rem;
+  line-height: 1.7;
+}
+
+/* ========== NAV ARROWS WITH CIRCLE (ARTICLE VIEW) ========== */
+.article-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  margin: 2.5rem 0 1.5rem 0;
+}
+.article-nav .nav-arrow {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  outline: none;
+  border-radius: 50%;
+  width: 72px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  opacity: 0.8;
+  transition: opacity 0.18s, transform 0.18s, box-shadow 0.18s;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.09);
+}
+.article-nav .nav-arrow:before {
+  content: '';
+  position: absolute;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: #fff;
+  left: 0;
+  top: 0;
+  z-index: 0;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.07);
+}
+.article-nav .nav-arrow:focus,
+.article-nav .nav-arrow:hover {
+  opacity: 1;
+  transform: scale(1.08);
+  box-shadow: 0 4px 18px rgba(0,0,0,0.13);
+}
+.article-nav .nav-arrow-svg {
+  width: 38px;
+  height: 38px;
+  stroke: #232323;
+  fill: none;
+  z-index: 1;
+  position: relative;
+  transition: stroke 0.2s, transform 0.2s;
+}
+.article-nav .nav-arrow:hover .nav-arrow-svg,
+.article-nav .nav-arrow:focus .nav-arrow-svg {
+  stroke: #888;
+  transform: scale(1.09);
+}
+
+/* For overview/other nav arrows */
 .nav-arrows {
   display: flex;
   justify-content: center;
@@ -218,8 +263,8 @@ button {
   padding: 0;
   outline: none;
   border-radius: 50%;
-  width: 80px;
-  height: 80px;
+  width: 72px;
+  height: 72px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -231,8 +276,8 @@ button {
 .nav-arrow:before {
   content: '';
   position: absolute;
-  width: 80px;
-  height: 80px;
+  width: 72px;
+  height: 72px;
   border-radius: 50%;
   background: #fff;
   left: 0;
@@ -247,8 +292,8 @@ button {
   box-shadow: 0 4px 18px rgba(0,0,0,0.13);
 }
 .nav-arrow-svg {
-  width: 48px;
-  height: 48px;
+  width: 38px;
+  height: 38px;
   stroke: #232323;
   fill: none;
   z-index: 1;
@@ -276,7 +321,7 @@ button {
 }
 
 /* ========== RESPONSIVE ========== */
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   .article-list {
     max-width: 97vw;
     gap: 1rem;
@@ -285,16 +330,22 @@ button {
     padding: 1rem 0.7rem;
   }
   .nav-arrow,
-  .nav-arrow:before {
-    width: 54px;
-    height: 54px;
+  .nav-arrow:before,
+  .article-nav .nav-arrow,
+  .article-nav .nav-arrow:before {
+    width: 48px;
+    height: 48px;
   }
-  .nav-arrow-svg {
-    width: 32px;
-    height: 32px;
+  .nav-arrow-svg,
+  .article-nav .nav-arrow-svg {
+    width: 26px;
+    height: 26px;
   }
   .library-door {
     width: 80px;
     height: 130px;
+  }
+  .article-content {
+    padding: 1.2rem 0.6rem;
   }
 }
