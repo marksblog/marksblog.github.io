@@ -454,3 +454,53 @@ body {
   height: 60px;
   display: block;
 }
+.article-list {
+  list-style: none;
+  padding: 0;
+  margin: 2rem auto;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.article-card {
+  background: #fff8e6;
+  border-radius: 1.2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  padding: 1.2rem 1.5rem;
+  cursor: pointer;
+  transition: background 0.18s, transform 0.18s;
+  border: 1px solid #f5e6b0;
+}
+
+.article-card:hover {
+  background: #f5e6b0;
+  transform: translateY(-2px) scale(1.02);
+}
+
+.article-card h2 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.5rem;
+}
+
+.article-card p {
+  margin: 0 0 1rem 0;
+  color: #888;
+  font-size: 1.1rem;
+}
+
+.article-card button {
+  background: #bda95b;
+  color: #fff;
+  border: none;
+  border-radius: 0.7rem;
+  padding: 0.5rem 1.2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.18s;
+}
+
+.article-card button:hover {
+  background: #a08a3d;
+}
