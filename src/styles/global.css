@@ -27,6 +27,46 @@ button {
   font-size: inherit;
 }
 
+/* ========== DOOR STYLES ========== */
+.door-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4vw;
+}
+.door-pair {
+  display: flex;
+  gap: 3vw;
+  justify-content: center;
+  margin-bottom: 3vw;
+}
+.library-door {
+  width: 110px;
+  height: 180px;
+  border-radius: 13px;
+  background: #eaeaea;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.14), 0 1.5px 8px rgba(0,0,0,0.09);
+  display: inline-block;
+  position: relative;
+  transition: transform 0.18s, box-shadow 0.18s, background 0.18s;
+  cursor: pointer;
+  border: 2px solid #ccc;
+}
+.library-door:hover {
+  transform: scale(1.04) translateY(-6px);
+  box-shadow: 0 14px 40px rgba(0,0,0,0.17), 0 2px 12px rgba(0,0,0,0.13);
+  background: #f3f3f3;
+}
+.white-door {
+  background: linear-gradient(120deg, #f8f8f8 60%, #e0e0e0 100%);
+  border-color: #dadada;
+}
+.black-door {
+  background: linear-gradient(120deg, #232323 60%, #444 100%);
+  border-color: #191919;
+}
+
+/* ========== OVERVIEW HOME BUTTON ========== */
 .overview-home {
   position: fixed;
   top: 32px;
@@ -57,7 +97,7 @@ button {
   transform: scale(1.2);
 }
 
-/* Floating Circles */
+/* ========== FLOATING CIRCLES ========== */
 .floating-circles-row {
   display: flex;
   gap: 2.5vw;
@@ -105,7 +145,7 @@ button {
   border-color: #232323;
 }
 
-/* Article List - Stoic Classic Look */
+/* ========== ARTICLE LIST - STOIC CLASSIC ========== */
 .article-list {
   display: flex;
   flex-direction: column;
@@ -149,3 +189,73 @@ button {
   color: #fff;
   border: none;
   border-radius: 0.4rem;
+  padding: 0.42rem 1.1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  letter-spacing: 0.03em;
+  transition: background 0.16s;
+}
+
+.article-card button:hover {
+  background: #444;
+}
+
+/* ========== NAV ARROWS ========== */
+.nav-arrows {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 2.5rem 0 1.5rem 0;
+}
+.nav-arrow {
+  background: none;
+  border: none;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.18s, transform 0.18s;
+  padding: 0;
+}
+.nav-arrow:hover,
+.nav-arrow:focus {
+  opacity: 1;
+  transform: scale(1.13);
+}
+.nav-arrow-svg {
+  width: 80px;
+  height: 80px;
+  stroke: #232323;
+  fill: none;
+  transition: stroke 0.2s;
+}
+
+/* ========== AD PLACEHOLDER ========== */
+.ad-placeholder {
+  display: flex;
+  justify-content: center;
+  margin: 2.5rem 0 1.5rem 0;
+  min-height: 80px;
+}
+
+/* ========== MISC ========== */
+#library-app, #blog-app {
+  min-height: 40vh;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 600px) {
+  .article-list {
+    max-width: 97vw;
+    gap: 1rem;
+  }
+  .article-card {
+    padding: 1rem 0.7rem;
+  }
+  .nav-arrow-svg {
+    width: 54px;
+    height: 54px;
+  }
+  .library-door {
+    width: 70px;
+    height: 110px;
+  }
+}
