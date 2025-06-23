@@ -15,24 +15,24 @@ body { line-height: 1.5; -webkit-font-smoothing: antialiased; background: #faf9f
 }
 .door-pair {
   display: flex;
-  gap: 3vw;
+  gap: 4vw;
   justify-content: center;
   margin-bottom: 3vw;
 }
 .library-door {
-  width: 140px;
-  height: 220px;
-  border-radius: 13px;
+  width: 180px;
+  height: 300px;
+  border-radius: 18px;
   background: #eaeaea;
   box-shadow: 0 8px 32px rgba(0,0,0,0.14), 0 1.5px 8px rgba(0,0,0,0.09);
   display: inline-block;
   position: relative;
   transition: transform 0.18s, box-shadow 0.18s, background 0.18s;
   cursor: pointer;
-  border: 2px solid #ccc;
+  border: 2.5px solid #ccc;
 }
 .library-door:hover {
-  transform: scale(1.04) translateY(-6px);
+  transform: scale(1.04) translateY(-8px);
   box-shadow: 0 14px 40px rgba(0,0,0,0.17), 0 2px 12px rgba(0,0,0,0.13);
   background: #f3f3f3;
 }
@@ -44,6 +44,63 @@ body { line-height: 1.5; -webkit-font-smoothing: antialiased; background: #faf9f
   background: linear-gradient(120deg, #232323 60%, #444 100%);
   border-color: #191919;
 }
+
+/* ========== FLOATING CIRCLES ========== */
+.floating-circles-row {
+  position: absolute;
+  top: 10vh;
+  left: 0;
+  width: 100vw;
+  pointer-events: none;
+  z-index: 10;
+}
+.floating-circles-row a {
+  pointer-events: auto;
+}
+.floating-circle-ai,
+.floating-circle-classic,
+.floating-circle-noble,
+.floating-circle-wicked {
+  position: absolute;
+  border-radius: 50%;
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,0.10);
+  transition: transform 0.18s cubic-bezier(.4,0,.2,1), box-shadow 0.18s cubic-bezier(.4,0,.2,1);
+  cursor: pointer;
+  border: 2px solid rgba(0,0,0,0.09);
+  z-index: 2;
+}
+.floating-circle-ai {
+  width: 100px; height: 100px;
+  background: linear-gradient(135deg, #c3e3fc 40%, #b4d8f8 100%);
+  border-color: #8cb6d6;
+  left: 12vw; top: 4vh;
+  animation: float1 7s ease-in-out infinite alternate;
+}
+.floating-circle-classic {
+  width: 90px; height: 90px;
+  background: linear-gradient(135deg, #ececec 40%, #d3d3d3 100%);
+  border-color: #b0b0b0;
+  left: 34vw; top: 10vh;
+  animation: float2 8s ease-in-out infinite alternate;
+}
+.floating-circle-noble {
+  width: 85px; height: 85px;
+  background: linear-gradient(135deg, #f7f7f7 40%, #e3e3e3 100%);
+  border-color: #bdbdbd;
+  left: 58vw; top: 6vh;
+  animation: float3 6s ease-in-out infinite alternate;
+}
+.floating-circle-wicked {
+  width: 110px; height: 110px;
+  background: linear-gradient(135deg, #3b3b3b 40%, #5e5e5e 100%);
+  border-color: #232323;
+  left: 80vw; top: 12vh;
+  animation: float4 9s ease-in-out infinite alternate;
+}
+@keyframes float1 { to { top: 9vh; left: 16vw; } }
+@keyframes float2 { to { top: 16vh; left: 38vw; } }
+@keyframes float3 { to { top: 2vh; left: 63vw; } }
+@keyframes float4 { to { top: 18vh; left: 75vw; } }
 
 /* ========== OVERVIEW HOME BUTTON ========== */
 .overview-home {
@@ -74,52 +131,6 @@ body { line-height: 1.5; -webkit-font-smoothing: antialiased; background: #faf9f
 .overview-home:focus .nav-arrow-svg {
   stroke: #888;
   transform: scale(1.2);
-}
-
-/* ========== FLOATING CIRCLES ========== */
-.floating-circles-row {
-  display: flex;
-  gap: 2.5vw;
-  justify-content: center;
-  margin-top: 4vw;
-}
-.floating-circle-ai,
-.floating-circle-classic,
-.floating-circle-noble,
-.floating-circle-wicked {
-  width: 7vw;
-  height: 7vw;
-  min-width: 60px;
-  min-height: 60px;
-  max-width: 120px;
-  max-height: 120px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.25);
-  box-shadow: 0 2px 12px 0 rgba(0,0,0,0.10);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.18s cubic-bezier(.4,0,.2,1), box-shadow 0.18s cubic-bezier(.4,0,.2,1);
-  cursor: pointer;
-  border: 2px solid rgba(0,0,0,0.09);
-  position: relative;
-  z-index: 2;
-}
-.floating-circle-ai {
-  background: linear-gradient(135deg, #c3e3fc 40%, #b4d8f8 100%);
-  border-color: #8cb6d6;
-}
-.floating-circle-classic {
-  background: linear-gradient(135deg, #ececec 40%, #d3d3d3 100%);
-  border-color: #b0b0b0;
-}
-.floating-circle-noble {
-  background: linear-gradient(135deg, #f7f7f7 40%, #e3e3e3 100%);
-  border-color: #bdbdbd;
-}
-.floating-circle-wicked {
-  background: linear-gradient(135deg, #3b3b3b 40%, #5e5e5e 100%);
-  border-color: #232323;
 }
 
 /* ========== ARTICLE LIST - STOIC CLASSIC ========== */
@@ -189,6 +200,14 @@ body { line-height: 1.5; -webkit-font-smoothing: antialiased; background: #faf9f
   color: #232323;
   font-size: 1.13rem;
   line-height: 1.7;
+}
+.article-content img {
+  display: block;
+  margin: 2rem auto;
+  max-width: 100%;
+  max-height: 360px;
+  border-radius: 0.7rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
 }
 
 /* ========== NAV ARROWS WITH CIRCLE (ARTICLE VIEW) ========== */
@@ -321,6 +340,19 @@ body { line-height: 1.5; -webkit-font-smoothing: antialiased; background: #faf9f
 }
 
 /* ========== RESPONSIVE ========== */
+@media (max-width: 900px) {
+  .library-door {
+    width: 110px;
+    height: 180px;
+  }
+  .floating-circle-ai,
+  .floating-circle-classic,
+  .floating-circle-noble,
+  .floating-circle-wicked {
+    width: 68px !important;
+    height: 68px !important;
+  }
+}
 @media (max-width: 700px) {
   .article-list {
     max-width: 97vw;
@@ -342,8 +374,8 @@ body { line-height: 1.5; -webkit-font-smoothing: antialiased; background: #faf9f
     height: 26px;
   }
   .library-door {
-    width: 80px;
-    height: 130px;
+    width: 70px;
+    height: 110px;
   }
   .article-content {
     padding: 1.2rem 0.6rem;
