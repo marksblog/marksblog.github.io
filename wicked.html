@@ -2,16 +2,54 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Wicked Domain</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wicked Domain</title>
   <link rel="stylesheet" href="src/styles/global.css">
+  <style>
+    .overview-home {
+      position: fixed;
+      top: 32px;
+      left: 32px;
+      z-index: 9999;
+      opacity: 0.18;
+      background: none;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      transition: opacity 0.4s, transform 0.4s;
+    }
+    .overview-home:hover,
+    .overview-home:focus {
+      opacity: 0.85;
+      transform: scale(1.2);
+    }
+    .overview-home .nav-arrow-svg {
+      width: 80px;
+      height: 80px;
+      stroke: #111;
+      fill: none;
+      transition: transform 0.3s, stroke 0.2s;
+    }
+    .overview-home:hover .nav-arrow-svg,
+    .overview-home:focus .nav-arrow-svg {
+      stroke: #888;
+      transform: scale(1.2);
+    }
+  </style>
 </head>
 <body>
-  <div class="library-container">
-    <h1>Wicked Domain</h1>
-    <div id="article-list"></div>
-    <a href="index.html" class="back-link">← Back to Home</a>
-  </div>
+  <button class="nav-arrow home overview-home" title="Home" onclick="window.location.href='index.html'">
+    <svg class="nav-arrow-svg" viewBox="0 0 100 100" width="80" height="80">
+      <polygon points="50,20 20,50 30,50 30,80 70,80 70,50 80,50" fill="none" stroke-width="20" stroke="#111" stroke-linejoin="round"/>
+    </svg>
+  </button>
+  <div id="library-app"></div>
+  <script>
+    window.libraryContext = {
+      name: "wicked",
+      path: "content/wicked/"
+    };
+  </script>
   <script type="module" src="src/js/library.js"></script>
 </body>
 </html>
