@@ -1,0 +1,6 @@
+<ads>
+  <ad><file>01.xml</file></ad>
+  <ad><file>02.xml</file></ad>
+  <ad><file>03.xml</file></ad>
+  <!-- Add <ad><file>04.xml</file></ad> when you add 04.xml, etc. -->
+</ads>
