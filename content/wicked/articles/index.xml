@@ -1,0 +1,43 @@
+<articles>
+  <article>
+    <slug>wicked</slug>
+    <title>The Wicked Path</title>
+    <preview>Actions that stray from the light</preview>
+  </article>
+  <article>
+    <slug>evil</slug>
+    <title>The Nature of Evil</title>
+    <preview>Profoundly immoral and harmful</preview>
+  </article>
+  <article>
+    <slug>sinful</slug>
+    <title>The Sinful Act</title>
+    <preview>Transgressing moral law</preview>
+  </article>
+  <article>
+    <slug>vicious</slug>
+    <title>The Vicious Cycle</title>
+    <preview>Cruelty and violence repeated</preview>
+  </article>
+  <article>
+    <slug>depraved</slug>
+    <title>The Depraved Mind</title>
+    <preview>Corrupted and morally lost</preview>
+  </article>
+  <article>
+    <slug>nefarious</slug>
+    <title>The Nefarious Deed</title>
+    <preview>Wicked and criminal acts</preview>
+  </article>
+  <article>
+    <slug>corrupt</slug>
+    <title>The Corrupt Soul</title>
+    <preview>Dishonesty for personal gain</preview>
+  </article>
+  <article>
+    <slug>bad</slug>
+    <title>The Bad Example</title>
+    <preview>Low standards and poor choices</preview>
+  </article>
+  <!-- Add more as needed -->
+</articles>
