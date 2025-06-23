@@ -1,0 +1,48 @@
+<articles>
+  <article>
+    <slug>noble</slug>
+    <title>The Noble Spirit</title>
+    <preview>High moral character, dignity, and honor</preview>
+  </article>
+  <article>
+    <slug>honorable</slug>
+    <title>The Honorable Path</title>
+    <preview>Marked by integrity and respect</preview>
+  </article>
+  <article>
+    <slug>magnanimous</slug>
+    <title>The Magnanimous Heart</title>
+    <preview>Generous and noble in spirit</preview>
+  </article>
+  <article>
+    <slug>principled</slug>
+    <title>The Principled Stand</title>
+    <preview>Guided by unwavering values</preview>
+  </article>
+  <article>
+    <slug>virtuous</slug>
+    <title>The Virtuous Life</title>
+    <preview>Living with high moral standards</preview>
+  </article>
+  <article>
+    <slug>upstanding</slug>
+    <title>The Upstanding Citizen</title>
+    <preview>Respectable and trustworthy</preview>
+  </article>
+  <article>
+    <slug>lofty</slug>
+    <title>The Lofty Ideal</title>
+    <preview>Elevated in character and ambition</preview>
+  </article>
+  <article>
+    <slug>august</slug>
+    <title>The August Presence</title>
+    <preview>Respected and impressive</preview>
+  </article>
+  <article>
+    <slug>good</slug>
+    <title>The Good Within</title>
+    <preview>The opposite of wickedness</preview>
+  </article>
+  <!-- Add more as needed -->
+</articles>
